@@ -3,4 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the hello_world index.")
+    if request.method == 'POST':
+        # Handle form submission
+        return HttpResponse(f"You must have POSTed something.")
+    else:
+        return HttpResponse(f"Your request method is: {request.method}")
