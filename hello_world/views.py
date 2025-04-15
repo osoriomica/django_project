@@ -7,4 +7,4 @@ def index(request):
         # Handle form submission
         return HttpResponse(f"You must have POSTed something.")
     else:
-        return HttpResponse(f"Your request method is: {request.method}")
+        return HttpResponse(request.method)
